@@ -4,9 +4,12 @@ const HEADERS = {
     Accept: "application/json",
     "Content-Type": "application/json",
 };
+
+const URL = `https://e7205ef3-4d9a-44c4-a4ae-6e73be13a39f-00-2f6q3y0g5jhhc.sisko.replit.dev/`;
+// const URL = `http://localhost:3000/`;
 export default {
     async getBigTable(count) {
-        let res = await axios.get(`http://localhost:3000/getTable`, {
+        let res = await axios.get(URL + `getTable`, {
             params: {
                 count: count,
             },
@@ -15,7 +18,7 @@ export default {
         return res.data;
     },
     async addData(count) {
-        let res = await axios.get(`http://localhost:3000/add`, {
+        let res = await axios.get(URL + `add`, {
             params: {
                 count: count,
             },
@@ -24,7 +27,7 @@ export default {
         return res.data;
     },
     async updateRow(all) {
-        let res = await axios.post(`http://localhost:3000/updateRow`, {
+        let res = await axios.post(URL + `updateRow`, {
             all: all
             },
             {
@@ -33,14 +36,14 @@ export default {
         return res.data;
     },
     async clear() {
-        let res = await axios.post(`http://localhost:3000/clear`, {},
+        let res = await axios.post(URL + `clear`, {},
             {
                 headers: HEADERS
             });
         return res.data;
     },
     async addElement(el) {
-        let res = await axios.post(`http://localhost:3000/createElement`, {
+        let res = await axios.post(URL + `createElement`, {
                 symbol: el.symbol,
                 weight: el.weight
             },

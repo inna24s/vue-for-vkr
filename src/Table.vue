@@ -69,14 +69,14 @@
 <script lang="ts" setup>
 
 import {shallowRef} from 'vue'
-import ElementService from '@/services/ElementService';
+import ClientService from '@/services/ClientService';
 import Form from "@/Form.vue";
 const rows = shallowRef([]);
 
 getBigTable(20);
 
 function getBigTable(count) {
-  ElementService.getBigTable(count).then((res: any[]) => {
+  ClientService.getBigTable(count).then((res: any[]) => {
     if (res.length) {
       setRows(res);
     }
@@ -88,7 +88,7 @@ function setRows(update = rows.value.slice()) {
 }
 
 function add() {
-  ElementService.addData(1000).then((res: any[]) => {
+  ClientService.addData(1000).then((res: any[]) => {
     if (res.length) {
       setRows(res);
     }
@@ -100,7 +100,7 @@ function run(count) {
 }
 
 function update(all) {
-  ElementService.updateRow(all).then((res: any[]) => {
+  ClientService.updateRow(all).then((res: any[]) => {
     if (res.length) {
       setRows(res);
     }
@@ -108,7 +108,7 @@ function update(all) {
 }
 
 function clear() {
-  ElementService.clear().then(() => {
+  ClientService.clear().then(() => {
     setRows([]);
   });
 }
@@ -122,7 +122,7 @@ function swapRows() {
 }
 
 function createEl(el) {
-  ElementService.addElement(el).then(() => {
+  ClientService.addElement(el).then(() => {
     rows.value.push({
       position: rows.value.length + 1,
       ...el

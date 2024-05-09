@@ -423,6 +423,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});
+
 app.get('/getTable', (req, res) => {
     const { count } = req.query;
     if (count > ELEMENT_DATA.length) {
@@ -468,10 +472,6 @@ app.post('/createElement', (req, res) => {
         weight: weight
     }
     res.send(true);
-});
-
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
 });
 
 const buildData = (count = 1000) => {

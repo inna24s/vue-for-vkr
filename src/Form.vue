@@ -1,12 +1,14 @@
 <template>
   <form class="container" @submit.prevent="createEl">
     <div>
-      Symbol
-      <input class="text-input__input inp--padding" v-model="form.symbol"/>
+      <label> Symbol
+        <input class="text-input__input inp--padding" aria-labelledby="symbol" v-model="form.symbol"/>
+      </label>
     </div>
     <div>
-      Weight
-      <input class="text-input__input inp--padding" v-model="form.weight"/>
+      <label> Weight
+        <input class="text-input__input inp--padding" aria-labelledby="weight" v-model="form.weight"/>
+      </label>
     </div>
     <button class="submit__button" type="submit" :disabled="!form.symbol || !form.weight"> Send </button>
   </form>

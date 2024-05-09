@@ -144,6 +144,7 @@ table {
   table-layout: fixed;
   font-family: Arial;
   font-size: 15px;
+  width: 465px;
 }
 
 .table tr {

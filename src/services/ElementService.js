@@ -33,6 +33,7 @@ export default {
         return res.data;
     },
     async addElement(el) {
+        console.log(el)
         let res = await axios.post(`http://localhost:3000/createElement`, {
                 symbol: el.symbol,
                 weight: el.weight

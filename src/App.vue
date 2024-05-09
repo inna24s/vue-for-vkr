@@ -16,6 +16,7 @@ import Table from "@/Table.vue";
 .content {
   padding: 24px;
   height: 100vw;
+  background-color: floralwhite;
 }
 
 .container {

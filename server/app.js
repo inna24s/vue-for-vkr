@@ -452,13 +452,14 @@ app.post('/updateRow', (req, res) => {
 });
 
 app.post('/createElement', (req, res) => {
-    console.log(req)
+    console.log(req.body)
     const { symbol, weight } = req.body;
     ELEMENT_DATA[showCount + 1] = {
         position: showCount + 2,
         symbol: symbol,
         weight: weight
     }
+    res.send(true);
 });
 
 app.listen(3000, () => {

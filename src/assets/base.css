@@ -137,7 +137,7 @@ table {
   background-color: #7b7;
 }
 .btn {
-  width: 200px;
+  width: 150px;
 }
 
 .table {
@@ -147,9 +147,8 @@ table {
 }
 
 .table tr {
-  height: 25px;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  height: 32px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .table td.col-md-1 {

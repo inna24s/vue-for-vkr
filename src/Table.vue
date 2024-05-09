@@ -76,7 +76,6 @@ const rows = shallowRef([]);
 getBigTable(20);
 
 function getBigTable(count) {
-  console.log("kkkkkkkkkkk")
   ElementService.getBigTable(count).then((res: any[]) => {
     if (res.length) {
       setRows(res);
@@ -85,7 +84,6 @@ function getBigTable(count) {
 }
 
 function setRows(update = rows.value.slice()) {
-  console.log(update)
   rows.value = update
 }
 
@@ -107,11 +105,12 @@ function update(all) {
       setRows(res);
     }
   });
-  setRows();
 }
 
 function clear() {
-  setRows([]);
+  ElementService.clear().then(() => {
+    setRows([]);
+  });
 }
 
 function swapRows() {
@@ -123,7 +122,6 @@ function swapRows() {
 }
 
 function createEl(el) {
-  console.log(el)
   ElementService.addElement(el).then(() => {
     rows.value.push({
       position: rows.value.length + 1,

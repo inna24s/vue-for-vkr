@@ -8,7 +8,7 @@
       Weight
       <input class="text-input__input inp--padding" v-model="form.weight"/>
     </div>
-    <button class="submit__button" type="submit"> Send </button>
+    <button class="submit__button" type="submit" :disabled="!form.symbol || !form.weight"> Send </button>
   </form>
 </template>
 

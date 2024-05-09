@@ -451,8 +451,16 @@ app.post('/updateRow', (req, res) => {
     res.send(ELEMENT_DATA.slice(0, showCount));
 });
 
+app.post('/clear', (req, res) => {
+    for (let i = 0; i < showCount; i ++) {
+        if (ELEMENT_DATA[i].symbol.includes(' !!!'))
+            ELEMENT_DATA[i].symbol = ELEMENT_DATA[i].symbol.replace(' !!!', "");
+    }
+    showCount = 0;
+    res.send(true);
+});
+
 app.post('/createElement', (req, res) => {
-    console.log(req.body)
     const { symbol, weight } = req.body;
     ELEMENT_DATA[showCount + 1] = {
         position: showCount + 2,
